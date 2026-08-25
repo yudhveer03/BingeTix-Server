@@ -1,25 +1,19 @@
-import express from 'express'
+import express from 'express';
 import {
     getMovieData,
     getMovieById,
-    getShowsByMovieId
+    getShowsByMovieId,
+    getUpcomingReleases // Import the new function
 } from '../controllers/movies.controller.js';
 
-const router  =  express.Router()
+const router = express.Router();
+
+router.get('/', getMovieData);
 
 
-router.get('/',
-    getMovieData
-)
+router.get('/upcoming', getUpcomingReleases);
 
-router.get('/:id',
-    getMovieById
-)
+router.get('/:id', getMovieById);
+router.get('/:id/shows', getShowsByMovieId);
 
-router.get('/:id/shows',
-    getShowsByMovieId
-)
-
-
-
-export default router
+export default router;

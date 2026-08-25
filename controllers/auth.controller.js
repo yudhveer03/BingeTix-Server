@@ -33,7 +33,7 @@ export const  register = async (req, res) => {
             token
         })
     } catch (error) {
-        // EXACT FIX: Catch database errors (like duplicate emails) and return a proper response
+     
         console.error("Registration Error:", error);
         return res.status(500).json({
             message: "Registration failed. Email might already exist.",
@@ -43,7 +43,7 @@ export const  register = async (req, res) => {
 }
 
 export const login = async (req, res) => {
-    // EXACT FIX: Added try...catch block to login as well
+   
     try {
         const { username, password } = req.body
         const user = await userModel.findOne({

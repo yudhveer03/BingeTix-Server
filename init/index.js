@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
-const initData = require('../init/data.js')  
+const initData = require('../init/data.js')
 const movie = require('../model/movies.js');
 const show = require('../model/show.js')
 const initShow = require('./ShowData.js')
 
-const Mongo_url = 'mongodb://127.0.0.1:27017/FilmCity'
+const Mongo_url = 'mongodb://127.0.0.1:27017/BingeTix'
 
 main()
     .then(() => {
@@ -20,11 +20,11 @@ async function main() {
 
 
 const initDB = async () => {
-     
+
     await movie.deleteMany({});
     await movie.insertMany(initData.data);
     await show.deleteMany({})
-    await show.insertMany(initShow.ShowsDB) 
+    await show.insertMany(initShow.ShowsDB)
 
     console.log("Initialized Successfully")
 }
