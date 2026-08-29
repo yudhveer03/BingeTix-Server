@@ -5,7 +5,7 @@ import cors from 'cors';
 import bookingRoutes from '../routes/booking.routes.js';
 
 app.use(cors({
-    origin: [ "https://binge-tix-client.vercel.app/"],
+    origin: ["https://binge-tix-client.vercel.app"],
     credentials: true,
 }));
 app.use(express.json());
